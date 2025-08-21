@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <!-- Cargar A-Frame -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    
+    <!-- Cargar MindAR -->
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/mindar-image-aframe.prod.js"></script>
+  </head>
+  <body>
+    <!-- Escena AR -->
+    <a-scene mindar-image="imageTargetSrc: targets.mind" embedded color-space="sRGB" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
+      
+      <!-- Cámara del usuario -->
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <!-- Contenedor del video sobre el marcador -->
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-plane src="video.mp4" width="1" height="0.75" rotation="-90 0 0" position="0 0 0"></a-plane>
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>
